@@ -5,7 +5,7 @@ import { RxCross2 } from "react-icons/rx";
 import { cart as initialCart } from "./Data"; // Import directly from Data.js
 import { CiMenuBurger } from "react-icons/ci";
 
-function Navbar() {
+function Navbar({onLogout}) {
   const [showSearch, setShowSearch] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cart, setCart] = useState(initialCart); // Use the cart from Data.js
@@ -99,6 +99,12 @@ function Navbar() {
         onClick={() => setIsMenuOpen(true)}
       />
     </div>
+    <button
+        onClick={onLogout}
+        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition"
+      >
+        Logout
+      </button>
   </div>
 </header>
 
